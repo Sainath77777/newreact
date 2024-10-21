@@ -19,10 +19,16 @@ jobs:
           node-version: '16.x'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd newreact
+          npm install --legacy-peer-deps
 
       - name: Run unit tests
-        run: npm test
+        run: |
+          cd newreact
+          npm test
 
       - name: Build the app
-        run: npm run build
+        run: |
+          cd newreact
+          npm run build
